@@ -1,4 +1,6 @@
 Dexterity
+
+
 Sign Languages are a set of languages that use predefined actions and movements to convey a message. These languages are primarily developed to aid deaf and other verbally challenged people. They use a simultaneous and precise combination of movement of hands, orientation of hands, hand shapes etc. Different regions have different sign languages like American Sign Language, Indian Sign Language etc. We focus on Indian Sign language in this project.
 
 Indian Sign Language (ISL) is a sign language that is predominantly used in South Asian countries. It is sometimes referred to as Indo-Pakistani Sign Language (IPSL). There are many special features present in ISL that distinguish it from other Sign Languages. Features like Number Signs, Family Relationship, use of space etc. are crucial features of ISL. Also, ISL does not have any temporal inflection.
@@ -17,10 +19,10 @@ The main objective of the segmentation phase is to remove the background and noi
 
   
 Feature Extraction:
-The Speeded Up Robust Feature (SURF) technique is used to extract descriptors from the segmented hand gesture images. SURF is a novel feature extraction method which is robust against rotation, scaling, occlusion and variation in viewpoint.
+The Oriented FAST and rotated BRIEF (ORB) technique is used to extract descriptors from the segmented hand gesture images. ORB is a novel feature extraction method which is robust against rotation, scaling, occlusion and variation in viewpoint.
 
  Classification
-The SURF descriptors extracted from each image are different in number with the same dimension (64). However, a multiclass SVM requires uniform dimensions of feature vector as its input. Bag of Features (BoF) is therefore implemented to represent the features in histogram of visual vocabulary rather than the features as proposed. The descriptors extracted are first quantized into 150 clusters using K-means clustering. Given a set of descriptors, where K-means clustering categorizes numbers of descriptors into K numbers of cluster center.
+The ORB descriptors extracted from each image are different in number with the same dimension (64). However, a multiclass SVM requires uniform dimensions of feature vector as its input. Bag of Features (BoF) is therefore implemented to represent the features in histogram of visual vocabulary rather than the features as proposed. The descriptors extracted are first quantized into 150 clusters using K-means clustering. Given a set of descriptors, where K-means clustering categorizes numbers of descriptors into K numbers of cluster center.
 
 The clustered features then form the visual vocabulary where each feature corresponds to an individual sign language gesture. With the visual vocabulary, each image is represented by the frequency of occurrence of all clustered features. BoF represents each image as a histogram of features, in this case the histogram of 24 classes of sign languages gestures. 
 
@@ -38,7 +40,7 @@ Following Steps are followed to achieve this:
 
  Classifiers
 
-After obtaining the baf of features model, we are set to predict results for new raw images to test our model. Following classifiers are used :
+After obtaining the bag of features model, we are set to predict results for new raw images to test our model. Following classifiers are used :
 + Naive Bayes
 + Logistic Regression classifier
 + K-Nearest Neighbours
