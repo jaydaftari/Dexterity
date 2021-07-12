@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>tsparticles</title>
+    <!-- Import app.css from root directory -->
+    <link rel="stylesheet" href= {{url_for('static',filename='app.css')}}>
+    <!-- Import Varela font-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Varela">
+    <!-- Import font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Import icons -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css">
+</head>
+
+<body>
+    <!-- tsparticles div -->
+    <div id="tsparticles"></div>
+
+    <body class="login">
+        <div class="container">
+            <div class="login-container-wrapper clearfix">
+                <div class="logo">
+                    <i class="fa fa-sign-in"></i>
+                </div>
+                <div class="welcome"><strong>Welcome,</strong> to dexterity</div>
+<a href="http://127.0.0.1:8082/video"><button type="submit" class="btn btn-success btn-lg btn-block">live hand gesture</button></a>
+<a href="http://127.0.0.1:8082/image"><button type="submit" class="btn btn-success btn-lg btn-block">gesture image</button></a>
+                </div>
+        </div>
+        <!-- Import tsparticles.js and app.js files -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tsparticles/1.18.11/tsparticles.min.js"> </script>
+        <script src="{{url_for('static', filename='app.js')}}"></script>
+        </script>
+    </body>
+
+</html>
