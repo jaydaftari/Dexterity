@@ -26,7 +26,7 @@ The ORB descriptors extracted from each image are different in number with the s
 
 The clustered features then form the visual vocabulary where each feature corresponds to an individual sign language gesture. With the visual vocabulary, each image is represented by the frequency of occurrence of all clustered features. BoF represents each image as a histogram of features, in this case the histogram of 24 classes of sign languages gestures. 
 
- <h2>Bag of Features model</h2
+ <h2>Bag of Features model</h2>
 
 Following Steps are followed to achieve this:
 
